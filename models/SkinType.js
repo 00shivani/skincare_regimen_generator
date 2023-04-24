@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Project extends Model {}
+class SkinType extends Model {}
 
-skinCareRoutine.init(
+SkinType.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -15,6 +15,9 @@ skinCareRoutine.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    skinConcerns:{
+      type: DataTypes.STRING
+    },
     timeOfDay: {
       type: DataTypes.STRING,
     },
@@ -23,25 +26,22 @@ skinCareRoutine.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    needed_funding: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
-    },
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-    },
+  
+    // user_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'user',
+    //     key: 'id',
+    //   },
+    // },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'skinType',
   }
 );
 
-module.exports = Project;
+module.exports = SkinType;

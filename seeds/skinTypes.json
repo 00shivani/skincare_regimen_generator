@@ -1,0 +1,26 @@
+[
+    {
+      "skinType": "oily",
+      "timeOfDay": "AM",
+      "skinConcerns":"inflammation"
+   
+    },
+    {
+      "skinType": "oily",
+      "timeOfDay": "PM",
+      "skinConcerns":"hyperpigmentation"
+   
+    },
+    {
+      "skinType": "dry",
+      "timeOfDay": "AM",
+      "skinConcerns":"hyperpigmentation"
+      
+    },
+    {
+        "skinType": "combination",
+        "timeOfDay": "AM",
+        "skinConcerns":"inflammation"
+    }
+  ]
+  

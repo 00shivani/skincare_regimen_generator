@@ -20,6 +20,12 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    skinType: {
+      type:DataTypes.STRING,
+    },
+    skinConcerns:{
+      type: DataTypes.STRING
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,

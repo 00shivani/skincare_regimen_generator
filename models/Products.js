@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Project extends Model {}
+class Products extends Model {}
 
-skinCareRoutine.init(
+Products.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,11 +11,17 @@ skinCareRoutine.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    skinType: {
+    ProductTypes:{
+      type:DataTypes.STRING,
+    },
+    ProductName: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    timeOfDay: {
+    ProductDescription: {
+      type: DataTypes.STRING,
+    },
+    ProductPrice: {
       type: DataTypes.STRING,
     },
     date_created: {
@@ -23,14 +29,11 @@ skinCareRoutine.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    needed_funding: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
-    },
-    user_id: {
+ 
+    skin_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
+        model: 'skintype',
         key: 'id',
       },
     },
@@ -40,8 +43,8 @@ skinCareRoutine.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'Products',
   }
 );
 
-module.exports = Project;
+module.exports = Products;
