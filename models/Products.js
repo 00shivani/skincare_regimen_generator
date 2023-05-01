@@ -33,7 +33,7 @@ Products.init(
     skin_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'skintype',
+        model: 'SkinType',
         key: 'id',
       },
     },

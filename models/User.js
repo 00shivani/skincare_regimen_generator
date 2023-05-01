@@ -20,12 +20,12 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    skinType: {
-      type:DataTypes.STRING,
-    },
-    skinConcerns:{
-      type: DataTypes.STRING
-    },
+    // skinType: {
+    //   type:DataTypes.STRING,
+    // },
+    // skinConcerns:{
+    //   type: DataTypes.STRING
+    // },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -38,7 +38,7 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [8],
+        len: [4],
       },
     },
   },

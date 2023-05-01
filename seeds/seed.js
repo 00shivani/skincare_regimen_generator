@@ -1,8 +1,9 @@
 const sequelize = require('../config/connection');
-const { User, Products } = require('../models');
+const {User, quizData, Products} = require('../models');
 
 const userData = require('./userData.json');
-const projectData = require('./projectData.json');
+const productsData = require('./productsData.json');
+const skinTypes = require('./skinTypes.json')
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -12,13 +13,11 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const project of projectData) {
-    await Project.create({
-      ...project,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
-    });
-  }
+  const productInfo = await Products.bulkCreate(productsData);
 
+  const skinInfo = await SkinType.bulkCreate(skinTypes);
+
+  
   process.exit(0);
 };
 

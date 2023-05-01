@@ -1,19 +1,19 @@
 const User = require('./User');
-const SkinType = require('./SkinType');
+const quizData = require('./quizData');
 const Products = require('./Products')
 
-User.hasMany(SkinType, {
-  foreignKey: 'skinType'
+// User.hasMany(SkinType, {
+//   foreignKey: 'skinType'
  
-});
+// });
 
-SkinType.hasMany(Products, {
-  foreignKey: 'skin_id'
+// SkinType.hasMany(Products, {
+//   foreignKey: 'skin_id'
  
-});
+// });
 
-Products.belongsTo(SkinType, {
+Products.belongsTo(quizData, {
   foreignKey: 'skin_id'
 });
 
-module.exports = { User, SkinType, Products};
+module.exports = { User, quizData, Products};

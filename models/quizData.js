@@ -1,9 +1,13 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class SkinType extends Model {}
+class quizData extends Model {
+  getSummary() {
+    // Get a summary of the quiz data
+  }
+}
 
-SkinType.init(
+quizData.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,21 +15,21 @@ SkinType.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    skinType: {
+    skintype: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    skinConcerns:{
+    skinconcerns:{
       type: DataTypes.STRING
     },
-    timeOfDay: {
+    ingredients: {
       type: DataTypes.STRING,
     },
-    date_created: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
-    },
+    // date_created: {
+    //   type: DataTypes.DATE,
+    //   allowNull: false,
+    //   defaultValue: DataTypes.NOW,
+    // }
   
     // user_id: {
     //   type: DataTypes.INTEGER,
@@ -40,8 +44,8 @@ SkinType.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'skinType',
+    modelName: 'quizData',
   }
 );
 
-module.exports = SkinType;
+module.exports = quizData;

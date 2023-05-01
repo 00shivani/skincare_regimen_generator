@@ -1,26 +1,27 @@
 [
     {
-      "skinType": "oily",
-      "timeOfDay": "AM",
-      "skinConcerns":"inflammation"
+      "skintype": "oily",
+      "skinconcerns": "inflammation",
+      "ingredients": "natural"
    
     },
     {
-      "skinType": "oily",
-      "timeOfDay": "PM",
-      "skinConcerns":"hyperpigmentation"
+      "skintype": "oily",
+      "skinconcerns": "inflammation",
+      "ingredients": "natural"
+   
    
     },
     {
-      "skinType": "dry",
-      "timeOfDay": "AM",
-      "skinConcerns":"hyperpigmentation"
+      "skintype": "oily",
+      "skinconcerns": "inflammation",
+      "ingredients": "natural"
       
     },
     {
-        "skinType": "combination",
-        "timeOfDay": "AM",
-        "skinConcerns":"inflammation"
+      "skintype": "oily",
+      "skinconcerns": "inflammation",
+      "ingredients": "natural"
     }
   ]
   

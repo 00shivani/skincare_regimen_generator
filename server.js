@@ -3,6 +3,9 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
+
+console.log(routes);
+
 const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
@@ -39,8 +42,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+//images
+// app.use('/images',express.static(path.join(__dirname, 'public/images')));
 app.use(routes);
+//routes takes you to controllers (line 5)
 
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: true }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
